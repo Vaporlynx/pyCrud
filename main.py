@@ -13,6 +13,8 @@ redisInstance = redis.Redis(host="127.0.0.1", port=31337)
 # curl -i -X DELETE 127.0.0.1:1337/entry/fruits/orange
 # curl -i 127.0.0.1:1337/entry/fruits/orange
 
+# TODO: implement rename.  What method to use?
+# PUT?  PATCH with some query param set in the url?
 class handler(BaseHTTPRequestHandler):
     def do_POST(self):
         if self.path.startswith("/instantiate"):
